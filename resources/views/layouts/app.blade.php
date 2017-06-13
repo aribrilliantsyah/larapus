@@ -20,7 +20,7 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body >
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -83,5 +83,9 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <center>
+    @include('layouts.menu')
+    @include('layouts.profile')
+    </center>
 </body>
 </html>
