@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 class test extends Controller
 {
     //
-    public function test()
+    public function __construct()
     {
-    	$a="Halaman percobaan";
+        $this->middleware('auth');
+    }
+    public function index()
+    {
+
+    	$a="HALAMAN INDEX";
     	return $a;
     }
 }
