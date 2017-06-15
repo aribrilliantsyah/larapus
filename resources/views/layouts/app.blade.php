@@ -11,12 +11,22 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <style>
+    body {
+          background-image: url({{asset('')}});
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+
+         }
+    </style>
     
     <link href="{{asset('/css/app.css')}}" rel="stylesheet">
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet">
 
-
+     
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -89,8 +99,8 @@
     <script src="{{asset('/js/app.js')}}"></script>
     <script src="{{asset('/js/bootstrap.min.css')}}"></script>
     <center>
-    @include('layouts.menu')
-    @include('layouts.profile')
+
+   
     </center>
 </body>
 </html>
