@@ -13,7 +13,7 @@
     <!-- Styles -->
     <style>
     body {
-          background-image: url({{asset('')}});
+          background-image: url({{asset ('bg.jpg') }});
           background-repeat: no-repeat;
           background-size: cover;
           background-attachment: fixed;
@@ -25,6 +25,7 @@
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet">
 
      
     <!-- Scripts -->
