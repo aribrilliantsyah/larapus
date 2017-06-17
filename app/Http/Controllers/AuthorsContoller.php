@@ -25,6 +25,7 @@ class AuthorsContoller extends Controller
                 'model'     => $author,
                 'form_url'  => route('authors.destroy', $author->id),
                 'edit_url' => route('authors.edit', $author->id),
+                'confirm_message'=>'Yakin mau menghapus : '.$author->name.' ?'
             
                 ]);
         })->make(true);
@@ -117,10 +118,10 @@ class AuthorsContoller extends Controller
      */
     public function destroy($id)
     {
-        Author::destroy($id);
-        Session::flash("flash_notificaion",[
+       if(!Author::destroy($id))return redirect()->back();
+       Session::flash("flash_notification", [
             "level"=>"success",
-            "message"=>"penulis berhasil dihapus"
+            "message"=>"Berhasil Menghapus Penulis"
             ]);
 
         return redirect()->route('authors.index');
