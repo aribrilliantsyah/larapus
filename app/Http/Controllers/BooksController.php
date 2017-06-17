@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Yajra\Datatables\Html\Builder;
 use Yajra\Datatables\Datatables;
 
@@ -64,7 +64,7 @@ class BooksController extends Controller
             'title' =>'required|unique:books,title',
             'author_id'=>'required|exists:authors,id',
             'amount'=>'required|numeric',
-            'cover'=>'image|max:20048'
+            'cover'=>'mimes:jpeg,jpg,png,gif|required|max:10000'
             ]);
 
         $book = Book::create($request->except('cover'));
@@ -80,11 +80,11 @@ class BooksController extends Controller
             //membuat nama file random berikut extensi
             $filename=md5(time()) .'.'. $extension;
             //menyimpan cover ke folder public/img
-            $destinationPath = public_path() . DIRECTORY_SEPERATOR .'img';
+            $destinationPath = public_path() . DIRECTORY_SEPARATOR .'img';
             $uploded_cover->move($destinationPath,$filename);
 
             //mengisi field cover di book dengan file name yang baru di buat
-            $book->cover= $filename;
+            $book->cover = $filename;
             $book->save();
 
         }
@@ -130,6 +130,50 @@ class BooksController extends Controller
     public function update(Request $request, $id)
     {
         //
+         $this->validate($request,[
+            'title' =>'required|unique:books,title',
+            'author_id'=>'required|exists:authors,id',
+            'amount'=>'required|numeric',
+            'cover'=>'mimes:jpeg,jpg,png,gif|required|max:10000'
+            ]);
+
+        $book = Book::find($id);
+        $book->update($request->all());
+
+        //isi file cover jika ada cover yang di upload
+
+        if($request->hasFile('cover')) {
+            //mengambil cover yang di upload berikut extension
+            $filename=null;
+            $uploded_cover = $request->file('cover');
+            $extension = $uploded_cover->getClientOriginalExtension();
+            //membuat nama file random berikut extensi
+            $filename=md5(time()) .'.'. $extension;
+            //menyimpan cover ke folder public/img
+            $destinationPath = public_path() . DIRECTORY_SEPARATOR .'img';
+            $uploded_cover->move($destinationPath,$filename);
+
+            //hapus cover lama
+            if($book->cover) {
+                $old_cover=$book->cover;
+                $filepath = public_path() . DIRECTORY_SEPARATOR .'img' 
+                . DIRECTORY_SEPARATOR .$book->cover ;
+
+                try{
+                    File::delete($filepath);
+
+                }cacth (FileNotFoundException $e){
+                    //file sudah dihapus/tidak ada
+                }
+            }
+            //ganti field cover dengan cover baru
+
+        }
+        Session::flash("flash_notification", [
+            "level"=>"success",
+            "message"=>"Berhasil menyimpan $book->name"
+            ]);
+        return redirect()->route('books.index');
     }
 
     /**
