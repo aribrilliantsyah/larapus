@@ -31,8 +31,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-
+    protected $cast =[
+        'is_verified'=>'boolean',
+    ];
     public function borrow(Book $book)
     {
         //cek apakah masih ada stock buku
@@ -52,4 +53,5 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\BorrowLog');
     }
+
 }

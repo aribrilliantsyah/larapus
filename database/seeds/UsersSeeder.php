@@ -30,21 +30,18 @@ class UsersSeeder extends Seeder
         $admin->name ="Admin Larapus";
         $admin->email ="admin@gmail.com";
         $admin->password=bcrypt('rahasia') ;
+        $admin->is_verified = 1;
         $admin->save();
         $admin->attachRole($adminRole);
 
-        $admin = new User();
-        $admin->name ="Ari_Admin";
-        $admin->email ="ari@coding.com";
-        $admin->password=bcrypt('0brilliant0') ;
-        $admin->save();
-        $admin->attachRole($adminRole);
+        
 
          //membuat member
         $member = new User();
         $member->name ="Sample Mamber ";
         $member->email ="member@gmail.com";
         $member->password=bcrypt('rahasia') ;
+        $member->is_verified = 1;
         $member->save();
         $member->attachRole($memberRole);
 
