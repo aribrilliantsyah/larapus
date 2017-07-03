@@ -2,3 +2,8 @@
  .tab-pane {
  	padding: 15px 0 px 15px 0px;
  }
+
+ @font-face {
+    font-family: AristaLightTrial;
+    src: url({{asset('/fonts/AristaLightTrial.tff')}});
+}

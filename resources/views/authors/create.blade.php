@@ -10,9 +10,9 @@
 					<li><a href="{{ url('/admin/authors') }}">Penulis</a></li>
 					<li class="active">Tambah Penulis</li>
 				</ul>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h2 class="panel-title">Tambah Penulis</h2>
+				<div class="panel panel-custom">
+					<div class="panel-heading panel-heading-custom">
+						<h2 class="panel-title panel-title-custom"><i class="fa fa-plus-circle"></i> <i class="fa fa-users"></i> Tambah Penulis</h2>
 					</div>
 
 					<div class="panel-body">

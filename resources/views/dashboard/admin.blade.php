@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-custom">
-                <div class="panel-heading panel-heading-custom">Dashboard</div>
+                <div class="panel-heading panel-heading-custom"><i class="fa fa-desktop"></i> Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    Selamat datang di Menu Administrasi Larapus. Silahkan pilih menu administrasi yang diinginkan.
                 </div>
             </div>
         </div>

@@ -19,6 +19,9 @@
 	<div class="col-md-4">
 		{!! Form::number('amount', null, ['class'=>'form-control','min'=>1]) !!}
 		{!! $errors->first('amount', '<p class="help-block">:message</p>') !!}
+		@if(isset($book))
+		<p class="help-block">{{$book->borrowed}} Buku sedang dipinjam</p>
+		@endif
 	</div>
 </div>
 
@@ -28,6 +31,7 @@
 		{!! Form::file('cover',['class'=>'btn btn-default']) !!}
 
 		@if(isset($book) && $book->cover)
+		</br>
 		<p>
         {!! Html::image(asset('img/'.$book->cover.''),null,['class'=>'img-rounded img-responsive'])!!}
 		</p>

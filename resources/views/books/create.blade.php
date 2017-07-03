@@ -10,9 +10,9 @@
 					<li><a href="{{ url('/admin/books') }}">Buku</a></li>
 					<li class="active">Tambah Buku</li>
 				</ul>
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h2 class="panel-title">Tambah Buku</h2>
+				<div class="panel panel-custom">
+					<div class="panel-heading panel-heading-custom">
+						<h2 class="panel-title panel-title-custom"><i class="fa fa-plus-circle"></i> <i class="fa fa-book"></i> Tambah Buku</h2>
 					</div>
 
 					<div class="panel-body">

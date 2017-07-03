@@ -29,7 +29,7 @@ class StoreBookRequest extends FormRequest
         'title' =>'required|unique:books,title,',
         'author_id'=>'required|exists:authors,id',
         'amount'=>'required|numeric',
-        'cover'=>'mimes:jpeg,jpg,png,gif|required|max:10000'
+        'cover'=>'mimes:jpeg,jpg,png,gif|max:10000'
 
         ];
     }

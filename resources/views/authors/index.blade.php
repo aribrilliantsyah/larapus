@@ -8,12 +8,12 @@
 				<li><a href="{{url('/home')}}">Dashboard</a></li>
 				<li class="active">Penulis</li>
 			</ul>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h2 class="panel-title">Penulis</h2>
+			<div class="panel panel-custom">
+				<div class="panel-heading panel-heading-custom">
+					<h2 class="panel-title panel-title-custom"><i class="fa fa-users"></i> Penulis</h2>
 				</div>
 				<div class="panel-body">
-				  <p><a class="btn btn-primary" href="{{route('authors.create')}}">Tambah</a></p>
+				  <p><a class="btn btn-primary" href="{{route('authors.create')}}"><i class="fa fa-plus-circle"></i> Tambah</a></p>
 	              {!! $html->table(['class'=>'table-striped'])!!}
 				</div>
 			</div>

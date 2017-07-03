@@ -8,6 +8,6 @@
 
 <div class="form-group">
 	<div class="col-md-4 col-md-offset-2">
-		{!! Form::submit('Simpan', ['class'=>'btn btn-primary']) !!}
+		{{ Form::button('<i class="fa fa-save"></i> Simpan', ['type' => 'submit', 'class' => 'btn btn-primary btn-sm'] )  }}
 	</div>
 </div>
