@@ -97,7 +97,12 @@
                        @role('admin')
                        <li><a href="{{route ('authors.index')}}"><i class="fa fa-users"></i> Penulis</a></li>
                        <li><a href="{{route ('books.index')}}"><i class="fa fa-book"></i> Buku</a></li>
+                       <li><a href="{{route ('members.index')}}"><i class="fa fa-users"></i> Member</a></li>
+                       <li><a href="{{route ('statistics.index')}}"><i class="fa fa-hand-grab-o"></i> Peminjaman</a></li>
                        @endrole
+                       @if (auth()->check())
+                       <li><a href="{{url('/settings/profile')}}"><i class="fa fa-user"></i> Profile</a></li>
+                       @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -113,6 +118,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{url('/settings/password')}}"><i class="fa fa-lock"></i> Ubah Password</li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
@@ -143,6 +149,7 @@
     <script src="{{asset('/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('/js/dataTables.bootstrap.min.js')}}"></script>
     <script src="{{asset('/js/custom.js')}}"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     
 @yield('scripts')

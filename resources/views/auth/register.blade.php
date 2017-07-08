@@ -9,7 +9,7 @@
                 <div class="panel-heading panel-heading-custom"><i class="fa fa-user"></i>  Register</div>
                 <div class="panel-body">
                     {!! Form::open(['url'=>'/register','class'=>'form-horizontal']) !!}
-
+                    <div class="g-recaptcha" data-sitekey="6Lc5ticUAAAAALxsQqGMx4eMrinVkfsnXUnyxdq4"></div>
                     <div class="form-group{{$errors->has('name') ? 'has-error' : ''}} ">
                         {!! Form::label('name','Nama',['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="form-group{{$errors->has('email') ? 'has-error' : ''}} ">
-                        {!! Form::label('email','Alamat email',['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('email','Email',['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::email('email',null,['class'=>'form-control']) !!}
                             {!! $errors->first('email','<p class="help-block">:message</p>')!!}

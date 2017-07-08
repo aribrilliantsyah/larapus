@@ -31,7 +31,7 @@ class GuestController extends Controller
     	$html= $htmlBuilder
     	->addColumn(['data'=>'title','name'=>'title','title'=>'Judul'])
         ->addColumn(['data'=>'stock','name'=>'stock','title'=>'Stock','orderlable'=>false,'searchable'=>false])
-    	->addColumn(['data'=>'author.name','name'=>'author_name','title'=>'Penulis'])
+    	->addColumn(['data'=>'author.name','name'=>'author_name','title'=>'Penulis','searchable'=>false])
     	->addColumn(['data'=>'action','name'=>'action','title'=>'','orderlable'=>false,'searchable'=>false]);
     	return view('guest.index')->with(compact('html'));
     }

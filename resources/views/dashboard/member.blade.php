@@ -27,9 +27,10 @@
                                    ]) 
                                    !!}
                                    {!! $borrowLog->book->title !!}
-                                   
+                                   {!! Form::button('<i class="fa fa-mail-forward"></i> Kembalikan',['type'=>'submit','class'=>'btn btn-xs btn-primary']) !!}
+                                   {!! Form::close()!!}
                                </li>
-                               {!! Form::button('<i class="fa fa-mail-forward"></i> Kembalikan',['type'=>'submit','class'=>'btn btn-xs btn-primary']) !!}
+                               
                                <br>
                                @endforeach
                             </ul>
