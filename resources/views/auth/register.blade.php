@@ -8,8 +8,8 @@
            
                 <div class="panel-heading panel-heading-custom"><i class="fa fa-user"></i>  Register</div>
                 <div class="panel-body">
-                    {!! Form::open(['url'=>'/register','class'=>'form-horizontal']) !!}
-                    <div class="g-recaptcha" data-sitekey="6Lc5ticUAAAAALxsQqGMx4eMrinVkfsnXUnyxdq4"></div>
+                    {!! Form::open(['url'=>'/register','class'=>'form-horizontal','data-sitekey'=>'6Lc5ticUAAAAALxsQqGMx4eMrinVkfsnXUnyxdq4']) !!}
+                    
                     <div class="form-group{{$errors->has('name') ? 'has-error' : ''}} ">
                         {!! Form::label('name','Nama',['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
@@ -42,7 +42,8 @@
                         </div>
                     </div>
                     <div class="form-group {{$errors->has('g-recaptcha-response')? 'has-error' : ''}} ">
-                        <div class="col-md-offset-4 col-md-6">
+                        <div class="col-md-offset-4 col-md-6" >
+
                             {!! app('captcha')->display() !!}
                             {!! $errors->first('g-recaptcha-response','<p class="help-block">:message</p>') !!}
                         </div>

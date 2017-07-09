@@ -90,7 +90,7 @@ class MembersController extends Controller
             "dan password <strong>".$password."</strong>."
 
             ]);
-        return redirect()->route('member.index');
+        return redirect()->route('members.index');
     }
 
     /**

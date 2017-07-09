@@ -14,7 +14,6 @@
 
     <link href="{{asset('/css/app.css')}}" rel="stylesheet">
     <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet">
-
     <link href="{{asset('/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{asset('/css/dataTables.bootstrap.css')}}" rel="stylesheet">
@@ -149,7 +148,7 @@
     <script src="{{asset('/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('/js/dataTables.bootstrap.min.js')}}"></script>
     <script src="{{asset('/js/custom.js')}}"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+   
 
     
 @yield('scripts')
