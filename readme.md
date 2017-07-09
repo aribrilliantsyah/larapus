@@ -1,3 +1,9 @@
+#Baca !!!
+ Untuk Sementara ini sampai tahun 2018 mendatang, Repository ini tidak diperuntukan dilakukannya aktivitas clone repository ini, dikarenakan ini berkaitan dengan prakerin SMK ASSALAAM agar tiap siswanya mengerti satu persatu source code di dalam modul laravel.
+ Yang ngotot tetep clone terlihat dan terpantau oleh server.
+ 
+
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
